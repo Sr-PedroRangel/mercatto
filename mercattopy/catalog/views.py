@@ -1,7 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Categoria, Produto
-
-
+from django.contrib import messages
+from .forms import ProdutoForm
 
 def lista_categorias(request):
     categorias = Categoria.objects.all()
@@ -24,4 +24,52 @@ def detalhe_produto(request, pk):
 
     return render(request, "catalog/product_detail.html", {
         "product": produto
+    })
+
+def product_create(request):
+    if request.method == "POST":
+        form = ProdutoForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Produto cadastrado com sucesso!")
+            return redirect("product_list")
+
+    else:
+        form = ProdutoForm()
+
+    return render(request, "catalog/product_form.html", {"form": form})
+
+def product_update(request, id):
+    product = get_object_or_404(Produto, id=id)
+
+    if request.method == "POST":
+        form = ProdutoForm(request.POST, instance=product)
+
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Produto atualizado com sucesso!")
+            return redirect("product_list")
+
+    else:
+        form = ProdutoForm(instance=product)
+
+    return render(request, "catalog/product_form.html", {"form": form})
+
+
+def product_delete(request, id):
+    product = get_object_or_404(Produto, id=id)
+
+    if request.method == "POST":
+
+        if product.stock > 0:
+            messages.error(request, "Não é possível excluir produto com estoque.")
+            return redirect("product_list")
+
+        product.delete()
+        messages.success(request, "Produto excluído com sucesso!")
+        return redirect("product_list")
+
+    return render(request, "catalog/product_confirm_delete.html", {
+        "product": product
     })

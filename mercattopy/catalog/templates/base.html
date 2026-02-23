@@ -59,6 +59,14 @@
                 <span class="me-3"><i class="fa-solid fa-user"></i> Usuário</span>
             </div>
 
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+            </div>
+                {% endfor %}
+                {% endif %}
+
             <div class="p-4">
                 {% block content %}{% endblock %}
             </div>
