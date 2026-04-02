@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5462b2e0-e85d-4a09-b004-6e78b9f5e791" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/atividade_mercatto.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mercattopy/catalog/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/mercattopy/catalog/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mercattopy/catalog/templates/catalog/product_confirm_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/mercattopy/catalog/templates/catalog/product_confirm_delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mercattopy/catalog/templates/catalog/product_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/mercattopy/catalog/templates/catalog/product_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mercattopy/catalog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mercattopy/catalog/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mercattopy/catalog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mercattopy/catalog/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,27 +28,41 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Sr-PedroRangel&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Sr-PedroRangel/mercatto.git&quot;,
+    &quot;accountId&quot;: &quot;79680b02-8a0f-4f2d-a4d2-cdee8abe0ff9&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="39jGIhEoXNYOUqnVxEZcOSLD2uY" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Projetos em Python/atividade_mercatto&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Projetos em Python\atividade_mercatto\mercattopy\catalog\templates" />
       <recent name="C:\Projetos em Python\atividade_mercatto\mercattopy\catalog\template\catalog" />
     </key>
   </component>
@@ -68,5 +82,16 @@
       <updated>1771201988127</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

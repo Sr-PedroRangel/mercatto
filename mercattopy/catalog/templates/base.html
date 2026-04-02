@@ -47,8 +47,8 @@
         <nav class="col-md-2 sidebar p-0">
             <h5 class="text-white text-center py-4">MercattoPy</h5>
             <a href="{% url 'dashboard' %}"><i class="fa-solid fa-chart-line me-2"></i> Dashboard</a>
-            <a href="{% url 'category_list' %}"><i class="fa-solid fa-folder me-2"></i> Categorias</a>
-            <a href="{% url 'product_list' %}"><i class="fa-solid fa-box me-2"></i> Produtos</a>
+            <a href="{% url 'catalog:category_list' %}"><i class="fa-solid fa-folder me-2"></i> Categorias</a>
+            <a href="{% url 'catalog:product_list' %}"><i class="fa-solid fa-box me-2"></i> Produtos</a>
             <a href="#"><i class="fa-solid fa-cart-shopping me-2"></i> Vendas</a>
             <a href="{% url 'logout' %}"><i class="fa-solid fa-right-from-bracket me-2"></i> Logout</a>
         </nav>
