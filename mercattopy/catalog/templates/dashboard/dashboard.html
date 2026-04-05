@@ -43,4 +43,91 @@
     </div>
 </div>
 
+    <div class="col-md-3">
+        <div class="card shadow-sm">
+            <div class="card-body text-center">
+                <h6>Total de Produtos</h6>
+                <h3>{{ total_produtos }}</h3>
+            </div>
+        </div>
+    </div>
+
+
+<div class="col-md-3">
+        <div class="card shadow-sm">
+            <div class="card-body text-center">
+                <h6>Total de Categorias</h6>
+                <h3>{{ total_categorias }}</h3>
+            </div>
+        </div>
+    </div>
+
+
+<div class="col-md-3">
+        <div class="card shadow-sm">
+            <div class="card-body text-center">
+                <h6>Total de Vendas</h6>
+                <h3>{{ total_vendas }}</h3>
+            </div>
+        </div>
+    </div>
+
+
+<div class="col-md-3">
+        <div class="card shadow-sm">
+            <div class="card-body text-center">
+                <h6>Faturamento Total</h6>
+                <h3> R$ {{ faturamento_total }}</h3>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+<h5>Hoje</h5>
+<p>Vendas: {{ total_vendas_hoje }}</p>
+<p>Faturamento: R$ {{ faturamento_hoje }}</p>
+
+<h5>Mês</h5>
+<p>Vendas: {{ total_vendas_mes }}</p>
+<p>Faturamento: R$ {{ faturamento_mes }}</p>
+
+<h5>Últimas vendas</h5>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Data</th>
+        <th>Total</th>
+    </tr>
+
+    {% for venda in ultimas_vendas %}
+    <tr>
+        <td>{{ venda.id }}</td>
+        <td>{{ venda.date }}</td>
+        <td>R$ {{ venda.total }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h5>Top produtos vendidos</h5>
+
+<ul>
+    {% for item in top_produtos %}
+        <li>{{ item.product__name }} - {{ item.total_vendido }} unidades</li>
+    {% endfor %}
+</ul>
+
+<h5>Alerta de estoque baixo</h5>
+
+<ul>
+    {% for produto in produtos_estoque_baixo %}
+        <li>{{ produto.name }} ({{ produto.stock }} unidades)</li>
+    {% endfor %}
+</ul>
+
+
+
 {% endblock %}
