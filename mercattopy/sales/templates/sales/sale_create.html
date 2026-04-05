@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Nova Venda{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Registrar venda</h1>
+
+<form method="post">
+    {% csrf_token %}
+
+    {{ formset.management_form }}
+
+    {% if formset.non_form_errors %}
+        <div class="alert alert-danger">
+            {{ formset.non_form_errors }}
+        </div>
+    {% endif %}
+
+    {% for form in formset %}
+        <div class="card mb-3 p-3">
+            <div class="row g-3">
+                <div class="col-md-8">
+                    {{ form.product.label_tag }}
+                    {{ form.product }}
+                    {% for error in form.product.errors %}
+                        <div class="text-danger small">{{ error }}</div>
+                    {% endfor %}
+                </div>
+
+                <div class="col-md-4">
+                    {{ form.quantity.label_tag }}
+                    {{ form.quantity }}
+                    {% for error in form.quantity.errors %}
+                        <div class="text-danger small">{{ error }}</div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+    <button type="submit" class="btn btn-primary">
+        Finalizar venda
+    </button>
+</form>
+{% endblock %}
