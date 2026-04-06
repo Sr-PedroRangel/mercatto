@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Categoria, Produto
 from django.contrib import messages
@@ -8,23 +9,25 @@ from django.db.models import Sum, Count
 from django.utils import timezone
 from sales.models import Sale, SaleItem
 
+def is_admin(user):
+    return user.groups.filter(name="Admin").exists()
 
 
-
+@login_required
 def lista_categorias(request):
     categorias = Categoria.objects.all()
     return render(request, "catalog/category_list.html", {
         "categories": categorias
     })
 
-
+@login_required
 def lista_produtos(request):
     produtos = Produto.objects.select_related("category").all()
     return render(request, "catalog/product_list.html", {
         "products": produtos
     })
 
-
+@login_required
 def detalhe_produto(request, pk):
     produto = get_object_or_404(Produto.objects.select_related("category"), pk=pk)
 
@@ -32,7 +35,8 @@ def detalhe_produto(request, pk):
         "product": produto
     })
 
-
+@login_required
+@user_passes_test(is_admin)
 def product_create(request):
     if request.method == "POST":
         form = ProdutoForm(request.POST)
@@ -47,7 +51,8 @@ def product_create(request):
 
     return render(request, "catalog/product_form.html", {"form": form})
 
-
+@login_required
+@user_passes_test(is_admin)
 def product_update(request, pk):
     product = get_object_or_404(Produto, pk=pk)
 
@@ -64,7 +69,8 @@ def product_update(request, pk):
 
     return render(request, "catalog/product_form.html", {"form": form})
 
-
+@login_required
+@user_passes_test(is_admin)
 def product_delete(request, pk):
     product = get_object_or_404(Produto, pk=pk)
 
@@ -82,7 +88,7 @@ def product_delete(request, pk):
         "product": product
     })
 
-
+@login_required
 def dashboard(request):
     hoje = timezone.now().date()
     inicio_mes = hoje.replace(day=1)

@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.db import transaction
 from django.forms import formset_factory
 from django.shortcuts import render, redirect
-
+from django.contrib.auth.decorators import login_required
 from catalog.models import Produto
 from .forms import SaleItemForm
 from .models import Sale, SaleItem
@@ -12,7 +12,7 @@ from .models import Sale, SaleItem
 
 SaleItemFormSet = formset_factory(SaleItemForm, extra=3, min_num=1, validate_min=True)
 
-
+@login_required
 @transaction.atomic
 def sale_create(request):
     if request.method == "POST":

@@ -52,7 +52,21 @@
             <a href="#"><i class="fa-solid fa-cart-shopping me-2"></i> Vendas</a>
             <a href="{% url 'logout' %}"><i class="fa-solid fa-right-from-bracket me-2"></i> Logout</a>
             <a href="{% url 'sales:sale_create' %}"> <i class="fa-solid fa-cart-shopping me-2"></i> Vendas </a>
+
+            {% if user.is_authenticated %}
+
+            {% if user.groups.all.0.name == "Admin" %}
+                <a href="{% url 'catalog:lista_produtos' %}">Produtos</a>
+                <a href="{% url 'sales:sale_create' %}">Vendas</a>
+            {% endif %}
+
+            {% if user.groups.all.0.name == "Operador" %}
+                <a href="{% url 'sales:sale_create' %}">Vendas</a>
+            {% endif %}
+
+            {% endif %}
         </nav>
+
 
         <!-- Content -->
         <main class="col-md-10 p-0">
