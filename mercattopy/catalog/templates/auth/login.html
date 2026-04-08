@@ -29,10 +29,10 @@
                             <input type="password" class="form-control" name="password">
                         </div>
 
-                        {% if error %}
-                        <div class="alert alert-danger">
-                            {{ error }}
-                        </div>
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="alert alert-danger">{{ message }}</div>
+                            {% endfor %}
                         {% endif %}
 
                         <button type="submit" class="btn btn-primary w-100">

@@ -3,11 +3,14 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Categoria, Produto
 from django.contrib import messages
 from .forms import ProdutoForm
-
+from utils.permissions import admin_required
 
 from django.db.models import Sum, Count
 from django.utils import timezone
 from sales.models import Sale, SaleItem
+
+from ..utils.permissions import admin_required
+
 
 def is_admin(user):
     return user.groups.filter(name="Admin").exists()
@@ -36,7 +39,7 @@ def detalhe_produto(request, pk):
     })
 
 @login_required
-@user_passes_test(is_admin)
+@admin_required
 def product_create(request):
     if request.method == "POST":
         form = ProdutoForm(request.POST)
